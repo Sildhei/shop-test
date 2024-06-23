@@ -8,6 +8,7 @@ import { useCart } from "@/app/context";
 
 const Navbar = () => {
   const { setIsOpen, cartItems } = useCart();
+
   return (
     <nav className={styles.navbar}>
       <Container>
@@ -44,7 +45,7 @@ const Navbar = () => {
                     cartItems.length > 0 && styles.visibleProductsBadge
                   }`}
                 >
-                  <p>{cartItems.length}</p>
+                  <p data-testid="products-badge">{cartItems.length}</p>
                 </div>
                 <Image
                   src="/shopping-cart.svg"

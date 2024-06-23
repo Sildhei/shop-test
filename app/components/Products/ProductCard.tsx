@@ -40,8 +40,11 @@ const ProductCard = ({ product }: { product: ProductProps }) => {
           src="/products-image.jpg"
           alt="Product"
           fill
-          objectFit="cover"
-          style={{ borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}
+          style={{
+            borderTopLeftRadius: "10px",
+            borderTopRightRadius: "10px",
+            objectFit: "cover",
+          }}
         />
       </div>
       <div className={styles.infoContainer}>

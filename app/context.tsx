@@ -19,7 +19,7 @@ interface CartContextType {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const CartContext = createContext<CartContextType>({
+export const CartContext = createContext<CartContextType>({
   cartItems: [],
   setCartItems: () => {},
   addProductToCart: () => {},
