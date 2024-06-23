@@ -5,7 +5,7 @@ import { InputsProps } from "../components/AddNewProductForm/AddNewProductForm";
 import { ProductProps } from "../api/products/route";
 
 export async function addNewProductAction(product: InputsProps) {
-  await fetch("http://localhost:3000/api/products", {
+  await fetch(`${process.env.BASE_URL}/api/products`, {
     method: "POST",
     body: JSON.stringify(product),
     headers: {
@@ -16,7 +16,7 @@ export async function addNewProductAction(product: InputsProps) {
 }
 
 export async function buyProductsAction(itemsInCart: ProductProps[]) {
-  await fetch("http://localhost:3000/api/products", {
+  await fetch(`${process.env.BASE_URL}/api/products`, {
     method: "PATCH",
     body: JSON.stringify(itemsInCart),
     headers: {

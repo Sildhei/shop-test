@@ -1,12 +1,11 @@
 import { ProductProps } from "../api/products/route";
-import AddNewProductForm from "../components/AddNewProductForm/AddNewProductForm";
 import Container from "../components/commons/Container/Container";
 import ProductCard from "../components/Products/ProductCard";
 import styles from "./Products.module.scss";
 
 const getAllProducts = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/products", {
+    const res = await fetch(`${process.env.BASE_URL}/api/products`, {
       cache: "no-store",
       next: { tags: ["products"] },
     });
@@ -15,6 +14,8 @@ const getAllProducts = async () => {
     console.log("error", error);
   }
 };
+
+console.log('aca', process.env.BASE_URL)
 
 export default async function ProductsPage() {
   const res = await getAllProducts();
