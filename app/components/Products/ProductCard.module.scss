@@ -1,0 +1,118 @@
+@import "../../colors.scss";
+
+.mainContainer {
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 1px;
+  border-radius: 10px;
+  width: 200px;
+  height: 250px;
+  box-shadow: 0 0 2px 0px rgba(38, 38, 38, 0.75);
+  -webkit-box-shadow: 0 0 2px 0px rgba(38, 38, 38, 0.75);
+  -moz-box-shadow: 0 0 2px 0px rgba(38, 38, 38, 0.75);
+  transition: ease-in-out 0.2s all;
+  &:hover {
+    box-shadow: 0 0 8px 0px rgba(38, 38, 38, 0.6);
+  }
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    position: relative;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .infoContainer {
+    height: 110px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h4 {
+      text-transform: capitalize;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    p:last-child {
+      color: $primary-color;
+    }
+
+    .dataWrapper {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .noQty {
+      color: $red-color;
+    }
+
+    .buttonWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .inputContainer {
+        position: relative;
+
+        span {
+          color: $red-color;
+          font-size: 14px;
+          position: absolute;
+          top: 50px;
+          left: -140px;
+          width: 300px;
+        }
+        input {
+          border-radius: 5px;
+          border: 1px solid $secondary-color;
+          padding: 5px;
+          padding-top: 7px;
+          padding-bottom: 7px;
+          width: 40px;
+
+          &:focus-visible {
+            outline: 1px solid $primary-color;
+          }
+        }
+      }
+
+      button {
+        border: 1px solid $primary-color;
+        background-color: white;
+        color: $primary-color;
+        padding: 6px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: ease-in-out 0.2s all;
+        font-weight: bold;
+
+        &:hover {
+          background-color: $primary-color;
+          color: white;
+        }
+      }
+
+      .disabled {
+        cursor: not-allowed;
+        background-color: white;
+        color: $secondary-color;
+        border: 1px solid $secondary-color;
+        &:hover {
+          background-color: white;
+          color: $secondary-color;
+          border: 1px solid $secondary-color;
+        }
+      }
+    }
+  }
+}

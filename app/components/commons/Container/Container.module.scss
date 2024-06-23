@@ -1,0 +1,15 @@
+@import '../../../breakpoints.scss';
+
+.container {
+  padding-left: 60px;
+  padding-right: 60px;
+
+  @include xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+ 
+  @include sm {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

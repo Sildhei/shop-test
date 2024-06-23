@@ -1,0 +1,17 @@
+@import '../../../colors.scss';
+
+.button {
+    border: 1px solid $primary-color;
+    background-color: white;
+    color: $primary-color;
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: ease-in-out 0.2s all;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }

@@ -1,0 +1,45 @@
+@import "../colors.scss";
+@import "../breakpoints.scss";
+
+.mainContainer {
+  padding-top: 111px;
+  padding-bottom: 40px;
+
+  .rulesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .inputContainer {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+
+    input {
+      border-radius: 5px;
+      border: 1px solid $secondary-color;
+      padding: 5px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+
+      &:focus-visible {
+        outline: 1px solid $yellow-color;
+      }
+    }
+  }
+
+  .outputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+
+    p:last-child {
+      color: $primary-color;
+    }
+  }
+}
