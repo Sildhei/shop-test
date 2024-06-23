@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./AddNewProductForm.module.scss";
@@ -17,11 +17,11 @@ const AddNewProductForm = () => {
     formState: { errors },
   } = useForm<InputsProps>();
 
-  const onSubmit: SubmitHandler<InputsProps> = (data) => {
+  const onSubmit: SubmitHandler<InputsProps> = (data, event) => {
     addNewProductAction(data);
     reset();
   };
-  
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>
       <h3>Add New Product</h3>

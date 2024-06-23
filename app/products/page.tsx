@@ -1,4 +1,5 @@
 import { ProductProps } from "../api/products/route";
+import AddNewProductForm from "../components/AddNewProductForm/AddNewProductForm";
 import Container from "../components/commons/Container/Container";
 import ProductCard from "../components/Products/ProductCard";
 import styles from "./Products.module.scss";

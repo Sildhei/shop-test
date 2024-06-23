@@ -16,8 +16,8 @@ export async function addNewProductAction(product: InputsProps) {
 }
 
 export async function buyProductsAction(itemsInCart: ProductProps[]) {
-  await fetch("http://localhost:3000/api/shoppingCart", {
-    method: "POST",
+  await fetch("http://localhost:3000/api/products", {
+    method: "PATCH",
     body: JSON.stringify(itemsInCart),
     headers: {
       "Content-Typpe": "application/json",
