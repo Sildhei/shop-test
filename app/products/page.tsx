@@ -23,7 +23,7 @@ export default async function ProductsPage() {
       <Container>
         <h3>Products</h3>
         <div className={styles.productsContainer}>
-          {res.data.map((product: ProductProps) => (
+          {res?.data?.map((product: ProductProps) => (
             <ProductCard product={product} key={product.id} />
           ))}
         </div>

@@ -13,24 +13,21 @@ export async function GET() {
   return Response.json({ data: products });
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<void | Response> {
   const product = (await request.json()) as InputsProps;
 
-  products.forEach((item) => {
-    const itemInStock = item.name.toLowerCase() === product.name.toLowerCase();
-    if (itemInStock) {
-      item.amount += product.amount;
-      item.price = product.price
-    }
-  });
+  const existingProduct = products.find(
+    (item) => item.name.toLowerCase() === product.name.toLowerCase()
+  );
 
-  if (
-    !products.find(
-      (item) => item.name.toLowerCase() === product.name.toLowerCase()
-    )
-  ) {
-    return products.push({ ...product, id: products.length + 1 });
+  if (existingProduct) {
+    existingProduct.amount += product.amount;
+    existingProduct.price = product.price;
+
+    return Response.json({ message: "Product updated" });
+  } else {
+    products.push({ ...product, id: products.length + 1 });
+
+    return Response.json({ message: "Product added" });
   }
-
-  return Response.json({ message: "success" });
 }

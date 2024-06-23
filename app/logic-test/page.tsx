@@ -8,7 +8,6 @@ export default function LogicTest() {
   const [output, setOutput] = useState("");
 
   const handleOnChange = (input: string) => {
-
     let specialCharArr: { index: number; char: string }[] = [];
     let charArr: string[] = [];
 
@@ -34,16 +33,18 @@ export default function LogicTest() {
         <div className={styles.rulesContainer}>
           <p>
             Dada una cadena que contiene un carácter especial junto con letras
-            (de la 'a' a la 'z' y de la 'A' a la 'Z'), invierta la cadena de
-            manera que los caracteres especiales no se vean afectados.
+            (de la &apos;a&apos; a la &apos;z&apos; y de la &apos;A&apos; a la
+            &apos;Z&apos;), invierta la cadena de manera que los caracteres
+            especiales no se vean afectados.
           </p>
           <p>
-            Ejemplos: Entrada: str = "a,b$c" Salida: str = "c,b$a". Tenga en
-            cuenta que $ y , no se mueven a ningún lado.
+            Ejemplos: Entrada: str = &apos;a,b$c&apos; Salida: str =
+            &apos;c,b$a&apos;. Tenga en cuenta que $ y , no se mueven a ningún
+            lado.
           </p>
           <p>
-            Solo se invierte la subsecuencia "abc" Entrada: str = "Ab,c,de!$"
-            Salida: str = "ed,c,bA!$"
+            Solo se invierte la subsecuencia abc Entrada: str =
+            &apos;Ab,c,de!$&apos; Salida: str = &apos;ed,c,bA!$&apos;
           </p>
         </div>
         <div className={styles.inputContainer}>
