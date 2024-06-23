@@ -15,8 +15,6 @@ const getAllProducts = async () => {
   }
 };
 
-console.log('aca', process.env.BASE_URL)
-
 export default async function ProductsPage() {
   const res = await getAllProducts();
 
