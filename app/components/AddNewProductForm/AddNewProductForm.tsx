@@ -28,7 +28,7 @@ const AddNewProductForm = () => {
     reset();
     setTimeout(() => {
       router.push("/products");
-    }, 200);
+    }, 1000);
   };
 
   return (
