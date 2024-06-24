@@ -16,18 +16,17 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   const product = (await request.json()) as InputsProps;
 
-  products.forEach((p) => {
-    const existingProduct = products.find(
-      (item) => item.name.toLowerCase() === product.name.toLowerCase()
-    );
+  const existingProduct = products.find(
+    (item) => item.name.toLowerCase() === product.name.toLowerCase()
+  );
 
-    if (existingProduct) {
-      p.amount += product.amount;
-      p.price = product.price;
-    } else {
-      products.push({ ...product, id: products.length + 1 });
-    }
-  });
+  if (existingProduct) {
+    existingProduct.amount += product.amount;
+    existingProduct.price = product.price;
+  } else {
+    products.push({ ...product, id: products.length + 1 });
+  }
+
   return Response.json({ message: "Product added" });
 }
 
