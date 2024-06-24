@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import "./globals.scss";
 import { CartProvider } from "./context";
 import CartDrawer from "./components/CartDrawer/CartDrawer";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <CartProvider>
+          <Toaster
+            toastOptions={{
+              style: { border: "1px solid #20b04b" },
+            }}
+          />
           <div>
             <Navbar />
             <CartDrawer />

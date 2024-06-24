@@ -3,6 +3,8 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./AddNewProductForm.module.scss";
 import { addNewProductAction } from "@/app/helpers/actions";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export interface InputsProps {
   name: string;
@@ -10,6 +12,7 @@ export interface InputsProps {
   price: number;
 }
 const AddNewProductForm = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -17,9 +20,15 @@ const AddNewProductForm = () => {
     formState: { errors },
   } = useForm<InputsProps>();
 
-  const onSubmit: SubmitHandler<InputsProps> = (data, event) => {
+  const onSubmit: SubmitHandler<InputsProps> = (data) => {
     addNewProductAction(data);
+    toast.message("Product added to shopping list", {
+      description: `${data.name} (${data.amount})`,
+    });
     reset();
+    setTimeout(() => {
+      router.push("/products");
+    }, 200);
   };
 
   return (

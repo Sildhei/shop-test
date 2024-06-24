@@ -10,6 +10,7 @@ import {
   useEffect,
 } from "react";
 import { ProductProps } from "./api/products/route";
+import { toast } from "sonner";
 
 interface CartContextType {
   cartItems: ProductProps[];
@@ -48,6 +49,9 @@ export const CartProvider = ({ children }: PropsWithChildren<{}>) => {
           : { ...item }
       );
       setCartItems(newCartItems);
+      toast.message('Product added to cart', {
+        description: existingProduct.name,
+      })
       localStorage.setItem("cartItems", JSON.stringify(newCartItems));
     } else {
       const newCartItems = [
@@ -59,7 +63,12 @@ export const CartProvider = ({ children }: PropsWithChildren<{}>) => {
           amount: product.amount,
         },
       ];
+
       setCartItems(newCartItems);
+      toast.message('Product added to cart', {
+        description: newCartItems[newCartItems.length - 1].name,
+      })
+
       localStorage.setItem("cartItems", JSON.stringify(newCartItems));
     }
   };

@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     display: grid;
+    gap: 0 24px;
     grid-template-columns: repeat(5, 1fr);
     justify-content: center;
 
